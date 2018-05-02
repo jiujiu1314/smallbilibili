@@ -34,17 +34,8 @@ public class MainActivity extends BaseActivity
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        toolbar.setLogo(R.drawable.ic_hotbitmapgg_avatar);
-//        toolbar.setTitle("bilibili");
         setSupportActionBar(toolbar);
-//        toolbar.setNavigationIcon(R.drawable.ic_drawer_home);
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//        Runnable runnable = () -> System.out.println("这个是用拉姆达实现的线程");
-//        new Thread(runnable).start();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         bottomNavigationView = findViewById(R.id.bottom_navi);
@@ -56,12 +47,10 @@ public class MainActivity extends BaseActivity
     public int getLayoutId() {
         return R.layout.activity_main;
     }
-
     @Override
     public void initViews(Bundle savedInstanceState) {
 
     }
-
     @Override
     public void initToolBar() {
 
@@ -91,9 +80,17 @@ public class MainActivity extends BaseActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        switch (id){
+            case R.id.game:
 
+                break;
+            case R.id.share:
 
+                break;
+            case R.id.communicate:
+
+                break;
+        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -109,6 +106,7 @@ public class MainActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         switch (item.getItemId()) {
+            //侧滑点击事件
             case R.id.nav_camera:
 
                 return true;
@@ -127,6 +125,7 @@ public class MainActivity extends BaseActivity
             case R.id.nav_send:
 
                 return true;
+                //底部导航栏点击事件
             case R.id.bottom_home://首页
 
                 return true;

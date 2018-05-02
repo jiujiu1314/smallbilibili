@@ -10,6 +10,8 @@ import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
+import static net.lxj.bilibili.net.auxiliary.ApiConstants.DEV;
+
 /**
  * activity基类
  * Created by liangxuejiu on 2018/4/25 0025.
@@ -20,7 +22,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
     private RxPermissions rxPermissions;
 
     private Unbinder bind;
-    public static boolean DEV = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -11,7 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.components.support.RxFragment;
+
+import net.lxj.bilibili.net.auxiliary.ApiConstants;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -24,7 +27,7 @@ public abstract class BaseFragment extends RxFragment {
     //标志位 fragment是否可见
     protected boolean isVisible;
     private Unbinder bind;
-
+    private RxPermissions rxPermissions;
     public abstract
     @LayoutRes
     int getLayoutResId();
@@ -108,7 +111,11 @@ public abstract class BaseFragment extends RxFragment {
             onInvisible();
         }
     }
-
+    protected RxPermissions getRxPermissions() {
+        rxPermissions = new RxPermissions(getActivity());
+        rxPermissions.setLogging(ApiConstants.DEV);
+        return rxPermissions;
+    }
     /**
      * fragment显示时才加载数据
      */
