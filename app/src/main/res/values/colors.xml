@@ -7,4 +7,5 @@
     <color name="window_background">#eaeaea</color>
     <color name="transparent_">#80888888</color>
     <color name="transparent_half">#80ededed</color>
+    <color name="text_color">#666666</color>
 </resources>

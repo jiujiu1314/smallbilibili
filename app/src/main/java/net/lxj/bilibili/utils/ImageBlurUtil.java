@@ -5,10 +5,12 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.renderscript.Allocation;
 import android.renderscript.Element;
 import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
+import android.support.annotation.RequiresApi;
 
 /**
  * Created by hcc on 2016/10/2 00:05
@@ -58,6 +60,7 @@ public class ImageBlurUtil {
     /**
      * 图片高斯模糊具体实现方法
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public static Bitmap blur(Context context, Bitmap image, float radius) {
         // 计算图片缩小后的长宽
         int width = Math.round(image.getWidth() * BITMAP_SCALE);

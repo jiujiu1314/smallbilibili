@@ -7,6 +7,8 @@ import android.os.Bundle;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
 
+import net.lxj.bilibili.widget.BottomNavigationViewHelper;
+
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -89,6 +91,7 @@ public abstract class BaseActivity extends RxAppCompatActivity {
      * 设置数据显示
      */
     public void finishTask() {
+
     }
 
     @Override
