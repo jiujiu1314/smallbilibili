@@ -80,6 +80,7 @@ public class MainActivity extends BaseActivity
     public void initToolBar() {
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(this);
+        toolbarSearch.setOnClickListener(this);
         navigationLayout.setOnClickListener(view ->{
             toggleDrawer();
         });
@@ -167,13 +168,13 @@ public class MainActivity extends BaseActivity
 
         switch (id) {
             case R.id.game:
-
+                ToastUtil.ShortToast("游戏");
                 break;
             case R.id.share:
-
+                ToastUtil.ShortToast("下载");
                 break;
             case R.id.communicate:
-
+                ToastUtil.ShortToast("消息");
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -239,7 +240,13 @@ public class MainActivity extends BaseActivity
             case R.id.bottom_mine://会员购
 
                 return true;
-
+            case R.id.drawer_img:
+//                ToastUtil.ShortToast("侧滑");
+                toggleDrawer();
+                return  true;
+            case R.id.toolbar_search:
+                ToastUtil.ShortToast("搜索");
+                return true;
         }
         return false;
     }

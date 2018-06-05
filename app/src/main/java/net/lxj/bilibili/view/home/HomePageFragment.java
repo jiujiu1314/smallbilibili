@@ -65,8 +65,8 @@ public class HomePageFragment extends BaseFragment {
         float unSelectSize = 12;
         float selectSize = unSelectSize * 1.3f;
         moretabIndicator.setOnTransitionListener(new OnTransitionTextListener().setColor(0xFFFF4081, Color.GRAY).setSize(selectSize, unSelectSize));
-        moretabViewPager.setOffscreenPageLimit(2);
-//        moretabViewPager.setCurrentItem(1);
+        moretabViewPager.setOffscreenPageLimit(3);
+        moretabViewPager.setCurrentItem(1);
         indicatorViewPager = new IndicatorViewPager(moretabIndicator, moretabViewPager);
         inflate = LayoutInflater.from(getActivity());
         names = new ArrayList<>();
